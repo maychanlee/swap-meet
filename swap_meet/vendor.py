@@ -1,7 +1,4 @@
-from swap_meet.item import Item
-
 class Vendor:
-<<<<<<< HEAD
 
     """ 
         Wave 01:
@@ -20,25 +17,7 @@ class Vendor:
                 Returns False if the item is not found.
         """
 
-=======
->>>>>>> 9aa03cb421e849325cb63a6db00001aca7cffc88
     def __init__(self,inventory = None):
-        """ 
-        Wave 01:
-
-        Represents a vendor that manages an inventory of items.
-
-        Attributes:
-        inventory (list) Default =[]
-
-        Methods: 
-        add(item): Adds an item to the inventory.
-                Returns the item that was added.
-
-        remove(item): Removes the matching item from the inventory.
-                Returns the item that was removed.
-                Returns False if the item is not found.
-        """
         if not inventory:
             self.inventory = []
         else:
@@ -54,20 +33,17 @@ class Vendor:
             return item
         return False
 
-    def get_by_id(self, id):
-        """
-        Wave 02:
 
-        Methods:
-        get_by_id = takes one argument (int of Item's id)
-                    returns item with matching id
-                        if no matching, return None
-        """
-    
-        for item in self.inventory:
-            if item.id == id:
-                return item
-        return None
+
+
+"""
+    Wave 02:
+
+    Methods:
+    get_by_id = takes one argument (int of Item's id)
+                returns item with matching id
+                if no matching, return None
+"""
 
 """
     Wave 03:
