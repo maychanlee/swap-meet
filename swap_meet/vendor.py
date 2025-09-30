@@ -48,16 +48,33 @@ class Vendor:
                 return item
         return None
 
-"""
-    Wave 03:
+    def swap_items(self, other_vendor, my_item, their_item):
+        """
+        Wave 03:
 
-    Methods:
-    swap_items = takes 3 arguments: Vendor(others), Item(my_item), Item(their_item)
-        removes my_item from inventory and put to Vendor(others)
-        removes their_item from invetory and put to Vendor(self)
-        if no matching item, returns False
-"""
+        Methods:
+        swap_items = takes 3 arguments: Vendor(others), Item(my_item), Item(their_item)
+            removes my_item from inventory and put to Vendor(others)
+            removes their_item from invetory and put to Vendor(self)
+            if no matching item, returns False
+        """
 
+        self.other_vendor = other_vendor
+        self.my_item = my_item
+        self.their_item = their_item
+
+        if my_item not in self.inventory or their_item not in other_vendor.inventory:
+            return False
+
+        if my_item in self.inventory:
+            self.remove(my_item)
+            other_vendor.add(my_item)
+            other_vendor.remove(their_item)
+            self.add(their_item)
+            return True
+        
+
+            
 """
     Wave 04:
 
