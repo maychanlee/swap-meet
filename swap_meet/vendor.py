@@ -1,34 +1,27 @@
+from swap_meet.item import Item
+
 class Vendor:
-    pass
-""" 
-    Wave 01:
-
-    Represents a vendor that manages an inventory of items.
-
-    Attributes:
-    inventory (list) Default =[]
-
-    Methods: 
-    add(item): Adds an item to the inventory.
-            Returns the item that was added.
-
-    remove(item): Removes the matching item from the inventory.
-            Returns the item that was removed.
-            Returns False if the item is not found.
-<<<<<<< HEAD
-"""
-    def __init__(self,item,inventory =[ ]):
-        self.item = item
-        self.inventory = inventory
-=======
-    """
-
     def __init__(self,inventory = None):
+        """ 
+        Wave 01:
+
+        Represents a vendor that manages an inventory of items.
+
+        Attributes:
+        inventory (list) Default =[]
+
+        Methods: 
+        add(item): Adds an item to the inventory.
+                Returns the item that was added.
+
+        remove(item): Removes the matching item from the inventory.
+                Returns the item that was removed.
+                Returns False if the item is not found.
+        """
         if not inventory:
             self.inventory = []
         else:
             self.inventory = inventory
->>>>>>> c35979286c768b396cd400347bba25d0b8bafe40
 
     def add(self,item):
         self.inventory.append(item)
@@ -40,17 +33,20 @@ class Vendor:
             return item
         return False
 
+    def get_by_id(self, id):
+        """
+        Wave 02:
 
-
-
-"""
-    Wave 02:
-
-    Methods:
-    get_by_id = takes one argument (int of Item's id)
-                returns item with matching id
-                if no matching, return None
-"""
+        Methods:
+        get_by_id = takes one argument (int of Item's id)
+                    returns item with matching id
+                        if no matching, return None
+        """
+    
+        for item in self.inventory:
+            if item.id == id:
+                return item
+        return None
 
 """
     Wave 03:
