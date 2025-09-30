@@ -1,4 +1,8 @@
 from swap_meet.item import Item
+from swap_meet.decor import Decor
+from swap_meet.clothing import Clothing
+from swap_meet.electronics import Electronics
+
 class Vendor:
 
     # Wave 01:
@@ -111,10 +115,32 @@ class Vendor:
         if not category:
             return category_list
 
-        for item in self.invetory:
+        for item in self.inventory:
             if item.get_category() == category:
                 category_list.append(item)
                 
         return category_list
      
+    def get_best_by_category(self,category):
+
+        if not category:
+            return None
+
+        category_list = self.get_by_category(category)
+        best_item = category_list[0]
+        for item in category_list:
+            if item.condition > best_item.condition:
+                best_item = item
+        return best_item
    
+   
+    def swap_best_by_category(self, other_vendor, my_priority, their_priority):
+
+        my_best_item = self.get_best_by_category(their_priority)
+        their_best = other_vendor.get_best_by_category(my_priority)
+
+        if my_best_item not in self.inventory or their_best not in other_vendor.inventory:
+            return False 
+            
+        return self.swap_items(other_vendor, my_best_item, their_best)
+        
