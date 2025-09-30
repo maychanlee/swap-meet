@@ -45,7 +45,7 @@ class Vendor:
                 if no matching, return None
 """
 
-    def swap_items(self, other_vendor, my_item, their_item):
+def swap_items(self, other_vendor, my_item, their_item):
         """
         Wave 03:
 
@@ -72,7 +72,7 @@ class Vendor:
         
 
             
-    def swap_first_item(self, other_vendor):
+def swap_first_item(self, other_vendor):
         """
         Wave 04:
 

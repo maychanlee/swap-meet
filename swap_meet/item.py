@@ -17,6 +17,17 @@ class Item:
         Methods:
         get_category = returns a string holding the name of the class
     """
+    def __init__(self, id = None, condition = 0):
+        if not id:
+            self.id = uuid.uuid4().int
+        else:
+            self.id = id
+        self.condition = condition
+        
+
+    def get_category(self):
+        # return self.__class__.__name__
+        return "Item"
 
     def __str__(self):
         """
@@ -35,5 +46,16 @@ class Item:
         Methods:
         condition_description = describes the condition
     """
+    def condition_description(self):
+        if self.condition in range(4,5):
+            return "Like New!"
+        elif self.condition in range(3,4):
+            return "Rarely Used!"
+        elif self.condition in range(2,3):
+            return "Decent Condition"
+        elif self.condition in range(1,2):
+            return "Pretty Used"
+        else:
+            return "Pretty Bad"
 
 

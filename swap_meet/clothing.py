@@ -17,9 +17,11 @@ class Clothing(Item):
         super().__init__(id, condition)
         self.fabric = fabric
 
+    def get_category(self):
+        return "Clothing"
+
     def __str__(self):
-        id = self.id
+        first_sentence = super().__str__()
         fabric = self.fabric
-        type = super().get_category()
         
-        return f"An object of type {type} with id {id}. It is made from {fabric} fabric."
+        return f"{first_sentence} It is made from {fabric} fabric."
