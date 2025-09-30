@@ -1,34 +1,27 @@
 class Vendor:
-    pass
-""" 
-    Wave 01:
 
-    Represents a vendor that manages an inventory of items.
+    """ 
+        Wave 01:
 
-    Attributes:
-    inventory (list) Default =[]
+        Represents a vendor that manages an inventory of items.
 
-    Methods: 
-    add(item): Adds an item to the inventory.
-            Returns the item that was added.
+        Attributes:
+        inventory (list) Default =[]
 
-    remove(item): Removes the matching item from the inventory.
-            Returns the item that was removed.
-            Returns False if the item is not found.
-<<<<<<< HEAD
-"""
-    def __init__(self,item,inventory =[ ]):
-        self.item = item
-        self.inventory = inventory
-=======
-    """
+        Methods: 
+        add(item): Adds an item to the inventory.
+                Returns the item that was added.
+
+        remove(item): Removes the matching item from the inventory.
+                Returns the item that was removed.
+                Returns False if the item is not found.
+        """
 
     def __init__(self,inventory = None):
         if not inventory:
             self.inventory = []
         else:
             self.inventory = inventory
->>>>>>> c35979286c768b396cd400347bba25d0b8bafe40
 
     def add(self,item):
         self.inventory.append(item)
