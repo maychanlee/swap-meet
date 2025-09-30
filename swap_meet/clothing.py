@@ -1,17 +1,16 @@
 from swap_meet.item import Item
 
-class Clothing(Item):
-    """
-    Wave 05:
-    
-    Attributes:
-    Clothing(Item) = clone class
-    fabric = decription of clothing, defaults to "Unknown"
+# Wave 05:
 
-    Methods:
-    get_category = returns "Clothing"
-    str = "An object of type Clothing with id {id}. It is made from {fabric} fabric."
-    """
+# Attributes:
+# Clothing(Item) = clone class
+# fabric = decription of clothing, defaults to "Unknown"
+
+# Methods:
+# get_category = returns "Clothing"
+# str = "An object of type Clothing with id {id}. It is made from {fabric} fabric.
+
+class Clothing(Item):
 
     def __init__(self, id = None, condition = 0, fabric = "Unknown"):
         super().__init__(id, condition)
