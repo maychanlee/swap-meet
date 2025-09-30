@@ -75,16 +75,25 @@ class Vendor:
         
 
             
-"""
-    Wave 04:
+    def swap_first_item(self, other_vendor):
+        """
+        Wave 04:
 
-    Methods:
-    swap_first_item = takes 1 argument: Vendor(others)
+        Methods:
+        swap_first_item = takes 1 argument: Vendor(others)
         removes first item from my_item inventory and put to Vendor(others)
         removes first item from their_item invetory and put to Vendor(self)
         returns True
         if inventory is an empty list, returns False
-"""
+        """
+        
+        if not self.inventory or not other_vendor.inventory:
+            return False
+        
+        self.inventory[0], other_vendor.inventory[0] = other_vendor.inventory[0], self.inventory [0]
+        return True
+
+    
 
 """
     Wave 06:
