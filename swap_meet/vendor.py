@@ -15,16 +15,30 @@ class Vendor:
     remove(item): Removes the matching item from the inventory.
             Returns the item that was removed.
             Returns False if the item is not found.
+<<<<<<< HEAD
 """
     def __init__(self,item,inventory =[ ]):
         self.item = item
         self.inventory = inventory
+=======
+    """
 
-    def add_inventory(self):
-        
+    def __init__(self,inventory = None):
+        if not inventory:
+            self.inventory = []
+        else:
+            self.inventory = inventory
+>>>>>>> c35979286c768b396cd400347bba25d0b8bafe40
 
-
-    def remove_inventory(self):
+    def add(self,item):
+        self.inventory.append(item)
+        return item
+    
+    def remove(self,item):
+        if item in self.inventory:
+            self.inventory.remove(item)
+            return item
+        return False
 
 
 
