@@ -1,2 +1,61 @@
 class Vendor:
     pass
+"""
+    Wave 01:
+
+    represents a vendor with an inventory of items
+
+    Attributes:
+    inventory = [], list of items 
+
+    Methods:
+    add = add items to inventory list
+    remove = remove items from inventory, if none matching, returns False
+"""
+
+"""
+    Wave 02:
+
+    Methods:
+    get_by_id = takes one argument (int of Item's id)
+                returns item with matching id
+                if no matching, return None
+"""
+
+"""
+    Wave 03:
+
+    Methods:
+    swap_items = takes 3 arguments: Vendor(others), Item(my_item), Item(their_item)
+        removes my_item from inventory and put to Vendor(others)
+        removes their_item from invetory and put to Vendor(self)
+        if no matching item, returns False
+"""
+
+"""
+    Wave 04:
+
+    Methods:
+    swap_first_item = takes 1 argument: Vendor(others)
+        removes first item from my_item inventory and put to Vendor(others)
+        removes first item from their_item invetory and put to Vendor(self)
+        returns True
+        if inventory is an empty list, returns False
+"""
+
+"""
+    Wave 06:
+    
+    Methods:
+    get_by_category = takes 1 argument: string representing category
+            returns list of object with in category
+            returns empty list if none
+    get_best_by_category = takes 1 argument: string representing category
+            returns single item with highest condition
+            returns None if no matching
+    swap_best_by_category = takes 3 arguments: other_vendor, my_priority, their_priority
+            takes item from vendor(self) inventory that matches their priority and swap with items from other_vendor best item with my_priority
+            returns True
+            returns None if no matching
+
+"""
