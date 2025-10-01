@@ -20,7 +20,7 @@ class Vendor:
     #         Returns False if the item is not found.
     
 
-    def __init__(self,inventory = None):
+    def __init__(self,inventory=None):
         if not inventory:
             self.inventory = []
         else:
@@ -60,19 +60,14 @@ class Vendor:
 
     def swap_items(self, other_vendor, my_item, their_item):
 
-        self.other_vendor = other_vendor
-        self.my_item = my_item
-        self.their_item = their_item
-
         if my_item not in self.inventory or their_item not in other_vendor.inventory:
             return False
 
-        if my_item in self.inventory:
-            self.remove(my_item)
-            other_vendor.add(my_item)
-            other_vendor.remove(their_item)
-            self.add(their_item)
-            return True
+        self.remove(my_item)
+        other_vendor.add(my_item)
+        other_vendor.remove(their_item)
+        self.add(their_item)
+        return True
 
     # Wave 04:
 
@@ -125,7 +120,7 @@ class Vendor:
 
         category_list = self.get_by_category(category)
 
-        if not category or not category_list:
+        if not category_list:
             return None
 
         best_item = category_list[0]
@@ -140,7 +135,7 @@ class Vendor:
         my_best_item = self.get_best_by_category(their_priority)
         their_best = other_vendor.get_best_by_category(my_priority)
 
-        if my_best_item not in self.inventory or their_best not in other_vendor.inventory:
+        if not my_best_item or not their_best:
             return False 
             
         self.swap_items(other_vendor, my_best_item, their_best)
