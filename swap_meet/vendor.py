@@ -42,7 +42,7 @@ class Vendor:
     # get_by_id = takes one argument (int of Item's id)
     #             returns item with matching id
     #             if no matching, return None
- 
+
     def get_by_id(self,id):
 
         for item in self.inventory:
@@ -73,7 +73,7 @@ class Vendor:
             other_vendor.remove(their_item)
             self.add(their_item)
             return True
-  
+
     # Wave 04:
 
     # Methods:
@@ -104,9 +104,9 @@ class Vendor:
     #         takes item from vendor(self) inventory that matches their priority and swap with items from other_vendor best item with my_priority
     #         returns True
     #         returns None if no matching
- 
+
     def get_by_category(self, category):
-       
+
         # self.category = []
         # if not self.inventory in category:
         #      return []
@@ -120,20 +120,21 @@ class Vendor:
                 category_list.append(item)
                 
         return category_list
-     
+
     def get_best_by_category(self,category):
 
-        if not category:
+        category_list = self.get_by_category(category)
+
+        if not category or not category_list:
             return None
 
-        category_list = self.get_by_category(category)
         best_item = category_list[0]
+
         for item in category_list:
             if item.condition > best_item.condition:
                 best_item = item
         return best_item
-   
-   
+
     def swap_best_by_category(self, other_vendor, my_priority, their_priority):
 
         my_best_item = self.get_best_by_category(their_priority)
@@ -142,5 +143,5 @@ class Vendor:
         if my_best_item not in self.inventory or their_best not in other_vendor.inventory:
             return False 
             
-        return self.swap_items(other_vendor, my_best_item, their_best)
-        
+        self.swap_items(other_vendor, my_best_item, their_best)
+        return True

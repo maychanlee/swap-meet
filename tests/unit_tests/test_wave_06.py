@@ -110,6 +110,8 @@ def test_swap_best_by_category():
     assert result is True
     assert len(tai.inventory) == 3
     assert len(jesse.inventory) == 3
+    assert item_f in tai.inventory
+    assert item_c in jesse.inventory
     assert tai.inventory == [item_a, item_b, item_f]
     assert jesse.inventory == [item_d, item_e, item_c]
 
@@ -140,6 +142,8 @@ def test_swap_best_by_category_reordered():
     assert result is True
     assert len(tai.inventory) == 3
     assert len(jesse.inventory) == 3
+    assert item_f in tai.inventory
+    assert item_c in jesse.inventory
     assert tai.inventory == [item_b, item_a, item_f]
     assert jesse.inventory == [item_e, item_d, item_c]
 
@@ -219,15 +223,12 @@ def test_swap_best_by_category_no_match_is_false():
         their_priority="Clothing"
     )
 
-    raise Exception("Complete this test according to comments below.")
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
-    # Assertions should check:
-    # - That result is falsy
-    # - That tai and jesse's inventories are the correct length
-    # - That all the correct items are in tai and jesse's inventories
-
+    assert result is False
+    assert len(tai.inventory) == 3
+    assert len(jesse.inventory) == 3
+    assert tai.inventory == [item_a, item_b, item_c]
+    assert jesse.inventory == [item_d, item_e, item_f]
+    
 #@pytest.mark.skip
 def test_swap_best_by_category_no_other_match_is_false():
     # Arrange
@@ -252,11 +253,8 @@ def test_swap_best_by_category_no_other_match_is_false():
         their_priority="Decor"
     )
 
-    raise Exception("Complete this test according to comments below.")
-    # *********************************************************************
-    # ****** Complete Assert Portion of this test **********
-    # *********************************************************************
-    # Assertions should check:
-    # - That result is falsy
-    # - That tai and jesse's inventories are the correct length
-    # - That all the correct items are in tai and jesse's inventories
+    assert result is False
+    assert len(tai.inventory) == 3
+    assert len(jesse.inventory) == 3
+    assert item_b in tai.inventory
+    assert item_e in jesse.inventory
